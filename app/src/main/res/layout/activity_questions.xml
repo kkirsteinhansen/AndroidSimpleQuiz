@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+
+    <TextView
+        android:id="@+id/addquestion_heading"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Questions"
+        android:textAlignment="center"
+        android:padding="20dp" />
+
+    <TextView
+        android:id="@+id/addquestion_description"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="Description"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"
+        android:padding="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="Statement:  *" />
+
+    <EditText
+        android:id="@+id/addquestion_question"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="Answer:  *" />
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/addquestion_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <RadioButton android:id="@+id/addquestion_radiotrue"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="TRUE"/>
+        <RadioButton android:id="@+id/addquestion_radiofalse"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="FALSE"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/addquestion_add"
+        android:layout_gravity="center"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:text="ADD QUESTION"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        android:id="@+id/lq_rv"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="20dp"/>
+
+</LinearLayout>
