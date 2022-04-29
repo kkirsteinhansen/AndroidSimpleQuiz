@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listOfQuestions = Question.initQuestions();
+        Question.initQuestions(getApplication());
+        listOfQuestions = Question.getListOfQuestions();
 
         // Buttons
         quizButton = findViewById(R.id.quiz);
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Cannot start quiz if there are no questions
                 if (listOfQuestions.isEmpty()) {
-                    Display.message(MainActivity.this, Display.NO_QUESTIONS);
+                    Message.show(MainActivity.this, Message.NO_QUESTIONS);
                     return;
                 }
                 Intent intent = new Intent(MainActivity.this, PlayerActivity.class);

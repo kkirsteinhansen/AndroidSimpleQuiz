@@ -14,7 +14,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="25dp"
-        android:text="Congratulations,"
+        android:gravity="center"
+        android:text="FINAL RESULTS"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/winner"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +44,7 @@
         android:id="@+id/winner"
         android:layout_width="0dp"
         android:layout_height="60dp"
+        android:gravity="center"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:textAlignment="center"
@@ -106,7 +108,8 @@
         android:id="@+id/fourth_name"
         android:layout_width="120dp"
         android:layout_height="30dp"
-        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/guideline_list_bottom"
         app:layout_constraintEnd_toStartOf="@+id/fourth_score"
@@ -117,6 +120,8 @@
         android:id="@+id/second_score"
         android:layout_width="40dp"
         android:layout_height="30dp"
+        android:gravity="center"
+        android:paddingRight="10dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/third_score"
         app:layout_constraintEnd_toStartOf="@+id/second_icon"
@@ -127,6 +132,8 @@
         android:id="@+id/fourth_score"
         android:layout_width="40dp"
         android:layout_height="30dp"
+        android:gravity="center"
+        android:paddingRight="10dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/guideline_list_bottom"
         app:layout_constraintEnd_toStartOf="@+id/fourth_icon"
@@ -137,7 +144,8 @@
         android:id="@+id/third_name"
         android:layout_width="120dp"
         android:layout_height="30dp"
-        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/fourth_name"
         app:layout_constraintEnd_toStartOf="@+id/third_score"
@@ -148,7 +156,8 @@
         android:id="@+id/second_name"
         android:layout_width="120dp"
         android:layout_height="30dp"
-        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/third_name"
         app:layout_constraintEnd_toStartOf="@+id/second_score"
@@ -157,21 +166,23 @@
 
     <ImageView
         android:id="@+id/fourth_img"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/duck"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/fourth_name"
         app:layout_constraintEnd_toStartOf="@+id/fourth_name"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/guideline_list_left"
         app:layout_constraintTop_toTopOf="@+id/fourth_name"
-        tools:srcCompat="@tools:sample/avatars"
-        android:visibility="invisible" />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/first_score"
         android:layout_width="40dp"
         android:layout_height="30dp"
+        android:gravity="center"
+        android:paddingRight="10dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/second_score"
         app:layout_constraintEnd_toStartOf="@+id/first_icon"
@@ -182,7 +193,8 @@
         android:id="@+id/first_name"
         android:layout_width="120dp"
         android:layout_height="30dp"
-        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/second_name"
         app:layout_constraintEnd_toStartOf="@+id/first_score"
@@ -193,6 +205,8 @@
         android:id="@+id/third_score"
         android:layout_width="40dp"
         android:layout_height="30dp"
+        android:gravity="center"
+        android:paddingRight="10dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/fourth_score"
         app:layout_constraintEnd_toStartOf="@+id/third_icon"
@@ -201,8 +215,8 @@
 
     <ImageView
         android:id="@+id/first_img"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/bear"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/first_name"
@@ -214,8 +228,8 @@
 
     <ImageView
         android:id="@+id/third_img"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/boar"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/third_name"
@@ -227,8 +241,8 @@
 
     <ImageView
         android:id="@+id/second_img"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/crocodile"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/second_name"
@@ -267,27 +281,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="206dp" />
+        app:layout_constraintGuide_begin="194dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_list_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="525dp" />
+        app:layout_constraintGuide_begin="494dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_list_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="30dp" />
+        app:layout_constraintGuide_begin="25dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_list_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="30dp" />
+        app:layout_constraintGuide_end="25dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

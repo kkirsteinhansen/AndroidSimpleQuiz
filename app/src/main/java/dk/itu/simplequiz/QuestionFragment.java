@@ -35,15 +35,18 @@ public class QuestionFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
         livePlayers = new ViewModelProvider(requireActivity())
                 .get(PlayerViewModel.class);
         liveQuestions = new ViewModelProvider(requireActivity())
                 .get(QuestionsViewModel.class);
 
         index = 0;
-        listOfQuestions = Question.initQuestions();
-        listOfPlayers = Player.initPlayers();
         context = getContext();
+
+        listOfPlayers = Player.initPlayers();
+        Question.initQuestions(context);
+        listOfQuestions = Question.getListOfQuestions();
     }
 
     @Nullable
@@ -72,7 +75,6 @@ public class QuestionFragment extends Fragment {
         RadioGroup rg3 = v.findViewById(R.id.rg_p3);
         RadioGroup rg4 = v.findViewById(R.id.rg_p4);
         radioGroups = new RadioGroup[] {rg1, rg2, rg3, rg4};
-        for (RadioGroup rg : radioGroups) rg.setVisibility(View.INVISIBLE);
         for (int i = 0; i < listOfPlayers.size(); i++)
             radioGroups[i].setVisibility(View.VISIBLE);
 
@@ -82,7 +84,7 @@ public class QuestionFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (!buttonChecked()) {
-                    Display.message(context, Display.MISSING_ANSWER);
+                    Message.show(context, Message.MISSING_ANSWER);
                     return;
                 }
                 checkAnswers();
@@ -111,7 +113,7 @@ public class QuestionFragment extends Fragment {
     }
 
     private void showResults() {
-        Display.message(context, Display.GETTING_RESULTS);
+        Message.show(context, Message.GETTING_RESULTS);
         (new Handler()).postDelayed(new Runnable() {
             @Override
             public void run() {

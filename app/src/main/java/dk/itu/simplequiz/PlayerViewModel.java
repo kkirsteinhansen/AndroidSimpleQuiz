@@ -12,7 +12,6 @@ public class PlayerViewModel extends AndroidViewModel {
 
     private static MutableLiveData<List<Player>> livePlayers;
 
-
     public PlayerViewModel(@NonNull Application app) {
         super(app);
         if (livePlayers == null) {
@@ -25,14 +24,8 @@ public class PlayerViewModel extends AndroidViewModel {
         return livePlayers;
     }
 
-    public String getCurrentScores() {
-        return Player.getCurrentScores();
-    }
-
     public void addPoint(Player p) {
         p.addPoint();
         livePlayers.setValue(Player.initPlayers());
     }
-
-
 }

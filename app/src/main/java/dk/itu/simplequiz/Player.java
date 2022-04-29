@@ -1,7 +1,6 @@
 package dk.itu.simplequiz;
 
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 
 import androidx.lifecycle.ViewModel;
 
@@ -34,6 +33,10 @@ public class Player extends ViewModel implements Comparable<Player> {
         return score;
     }
 
+    public String getScoreString() {
+        return "" + score;
+    }
+
     public void addPoint() {
         score++;
     }
@@ -54,22 +57,10 @@ public class Player extends ViewModel implements Comparable<Player> {
         return listOfPlayers;
     }
 
-    public static String getCurrentScores() {
-        StringBuilder scores = new StringBuilder("");
-        for (Player p : listOfPlayers) {
-            scores.append(p.getName())
-                    .append(": ")
-                    .append(p.getScore())
-                    .append("\n");
-        }
-        scores.deleteCharAt(scores.length() - 1);
-        return scores.toString();
-    }
-
     @Override
     public int compareTo(Player that) {
-        if (this.getScore() > that.getScore()) return 1;
-        if (this.getScore() < that.getScore()) return -1;
+        if (this.score > that.score) return 1;
+        if (this.score < that.score) return -1;
         return 0;
     }
 
@@ -92,15 +83,20 @@ public class Player extends ViewModel implements Comparable<Player> {
     public static String getWinner() {
         List<Player> ranked = listOfPlayers;
         int highestScore = ranked.get(0).getScore();
+
+        if (highestScore == 0) return "Uh oh! No one got a single point.\n" +
+                "Perhaps a bit of studying is in order?";
+
         int numOfWinners = 1;
         for (int i = 1; i < ranked.size(); i++) {
-            if (ranked.get(i).getScore() == highestScore) numOfWinners++;
-        }
+            if (ranked.get(i).getScore() == highestScore) numOfWinners++; }
+
+        String congrats = "Congratulations, ";
+
         switch (numOfWinners) {
-            case 1: return ranked.get(0).getName() + "!";
-            case 2: return ranked.get(0).getName() + " and " + ranked.get(1).getName() + "!";
-            case 3: return ranked.get(0).getName() + ", " + ranked.get(1).getName() + "\nand "
+            case 1: return congrats + ranked.get(0).getName() + "!";
+            case 2: return congrats + ranked.get(0).getName() + " and " + ranked.get(1).getName() + "!";
+            case 3: return congrats + ranked.get(0).getName() + ", " + ranked.get(1).getName() + "\nand "
                     + ranked.get(2).getName() + "!";
-        } return "everyone!";
-    }
+        } return congrats + "everyone!"; }
 }

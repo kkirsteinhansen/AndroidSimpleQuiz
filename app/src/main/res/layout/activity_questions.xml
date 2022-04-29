@@ -38,21 +38,28 @@
         android:layout_height="20dp"
         android:text="Answer:  *" />
 
-    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    <RadioGroup
         android:id="@+id/addquestion_radiogroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginBottom="10dp"
         android:orientation="horizontal">
-        <RadioButton android:id="@+id/addquestion_radiotrue"
+
+        <RadioButton
+            android:id="@+id/addquestion_radiotrue"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="TRUE"/>
-        <RadioButton android:id="@+id/addquestion_radiofalse"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="5dp"
+            android:text="TRUE" />
+
+        <RadioButton
+            android:id="@+id/addquestion_radiofalse"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="FALSE"/>
+            android:paddingLeft="5dp"
+            android:text="FALSE" />
     </RadioGroup>
 
     <Button

@@ -47,18 +47,21 @@ public class QuestionsActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (fieldEmpty(questionField)) {
-                    Display.message(context, Display.MISSING_QUESTION);
+                    Message.show(context, Message.MISSING_QUESTION);
                     return;
                 }
                 int radioButtonId = radioGroup.getCheckedRadioButtonId();
                 if (!radioButtonChecked(radioButtonId)) {
-                    Display.message(context, Display.MISSING_ANSWER);
+                    Message.show(context, Message.MISSING_ANSWER);
                     return; }
 
                 String q = questionField.getText().toString();
                 boolean a = findRadioButton(radioButtonId);
                 liveQuestions.add(q, a);
-                Display.message(context, Display.QUESTION_ADDED);
+                Message.show(context, Message.QUESTION_ADDED);
+
+                questionField.setText("");
+                radioGroup.clearCheck();
             }
         });
 
@@ -83,6 +86,7 @@ public class QuestionsActivity extends AppCompatActivity {
     private boolean fieldEmpty(EditText field) {
         return field.getText().toString().equals("");
     }
+
 
 
     public class QuestionAdapter extends RecyclerView.Adapter<QuestionHolder> {
@@ -131,7 +135,7 @@ public class QuestionsActivity extends AppCompatActivity {
             // https://stackoverflow.com/questions/5754887/accessing-view-inside-the-linearlayout-with-code
             String q = (String)((TextView)v.findViewById(R.id.recycler_question)).getText();
             liveQuestions.remove(q); // Remove question on click
-            Display.message(context, Display.QUESTION_REMOVED);
+            Message.show(context, Message.QUESTION_REMOVED);
         }
     }
 }

@@ -16,7 +16,8 @@ public class QuestionsViewModel extends AndroidViewModel {
         super(app);
         if (liveQuestions == null) {
             liveQuestions = new MutableLiveData<>();
-            liveQuestions.setValue(Question.initQuestions());
+            Question.initQuestions(getApplication());
+            liveQuestions.setValue(Question.getListOfQuestions());
         }
     }
 
@@ -31,7 +32,7 @@ public class QuestionsViewModel extends AndroidViewModel {
     }
 
     public int getItemCount() {
-        return Question.initQuestions().size();
+        return Question.getListOfQuestions().size();
     }
 
     public MutableLiveData<List<Question>> getObservable() {

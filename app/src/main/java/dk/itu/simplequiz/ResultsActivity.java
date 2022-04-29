@@ -67,9 +67,10 @@ public class ResultsActivity extends AppCompatActivity {
             Player p = listOfPlayers.get(i);
             playerImages[i].setImageDrawable(p.getImage());
             playerNames[i].setText(p.getName());
-            //playerScores[i].setText(p.getScore());
+            playerScores[i].setText(p.getScoreString());
             if (p.getScore() == listOfPlayers.get(0).getScore())
-                rankIcons[i].setImageDrawable(winnerIcon);
+                if (p.getScore() == 0) rankIcons[i].setImageDrawable(loserIcon);
+                else rankIcons[i].setImageDrawable(winnerIcon);
         }
 
         if (Player.singleLowestScore())

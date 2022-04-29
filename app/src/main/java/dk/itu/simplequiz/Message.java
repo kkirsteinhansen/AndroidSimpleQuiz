@@ -3,7 +3,7 @@ package dk.itu.simplequiz;
 import android.content.Context;
 import android.widget.Toast;
 
-public class Display {
+public class Message {
 
     public static final String NO_QUESTIONS =  "There are no questions!";
     public static final String MISSING_QUESTION =  "Missing question!";
@@ -13,7 +13,7 @@ public class Display {
     public static final String QUESTION_ADDED =  "Question added!";
     public static final String QUESTION_REMOVED =  "Question removed!";
 
-    public static void message(Context c, String s) {
+    public static void show(Context c, String s) {
         Toast.makeText(c, s, Toast.LENGTH_SHORT).show();
     }
 }

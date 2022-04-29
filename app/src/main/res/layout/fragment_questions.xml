@@ -9,6 +9,7 @@
         android:id="@+id/current_question"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/p1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -16,9 +17,11 @@
     <!--- PLAYER 1'S OPTIONS -->
     <TextView
         android:id="@+id/p1"
-        android:layout_width="120dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
         app:layout_constraintBottom_toTopOf="@id/p2"
         app:layout_constraintEnd_toStartOf="@id/rg_p1"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +33,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/rg_p2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/p1"
@@ -41,6 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="5dp"
             android:text="TRUE" />
 
         <RadioButton
@@ -48,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="5dp"
             android:text="FALSE" />
 
     </RadioGroup>
@@ -55,8 +60,10 @@
     <!--- PLAYER 2'S OPTIONS -->
     <TextView
         android:id="@+id/p2"
-        android:layout_width="120dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
         app:layout_constraintBottom_toTopOf="@id/p3"
         app:layout_constraintEnd_toStartOf="@id/rg_p2"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +74,7 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/rg_p3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/p2"
@@ -77,6 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="5dp"
             android:text="TRUE" />
 
         <RadioButton
@@ -84,6 +93,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="5dp"
             android:text="FALSE" />
 
     </RadioGroup>
@@ -91,8 +101,10 @@
     <!--- PLAYER 3'S OPTIONS -->
     <TextView
         android:id="@+id/p3"
-        android:layout_width="120dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
         app:layout_constraintBottom_toTopOf="@id/p4"
         app:layout_constraintEnd_toStartOf="@id/rg_p3"
         app:layout_constraintStart_toStartOf="parent"
@@ -102,6 +114,7 @@
         android:id="@+id/rg_p3"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:visibility="invisible"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@id/rg_p4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,6 +126,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="5dp"
             android:text="TRUE" />
 
         <RadioButton
@@ -120,6 +134,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="5dp"
             android:text="FALSE" />
 
     </RadioGroup>
@@ -127,28 +142,31 @@
     <!--- PLAYER 4'S OPTIONS -->
     <TextView
         android:id="@+id/p4"
+        android:layout_width="140dp"
         android:layout_height="50dp"
-        android:layout_width="120dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
         app:layout_constraintEnd_toStartOf="@id/rg_p4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/p3"
-        />
+        app:layout_constraintTop_toBottomOf="@id/p3" />
 
     <RadioGroup
         android:id="@+id/rg_p4"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/p4"
-        app:layout_constraintTop_toBottomOf="@+id/rg_p3"
-        app:layout_constraintBottom_toTopOf="@id/submit">
+        app:layout_constraintTop_toBottomOf="@+id/rg_p3">
 
         <RadioButton
             android:id="@+id/p4_true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="5dp"
             android:text="TRUE" />
 
         <RadioButton
@@ -156,6 +174,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="5dp"
             android:text="FALSE" />
 
     </RadioGroup>

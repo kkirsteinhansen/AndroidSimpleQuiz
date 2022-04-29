@@ -54,7 +54,7 @@ public class PlayerActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (!enoughPlayers()) {
-                    Display.message(context, Display.NOT_ENOUGH_PLAYERS);
+                    Message.show(context, Message.NOT_ENOUGH_PLAYERS);
                     return;
                 }
 
