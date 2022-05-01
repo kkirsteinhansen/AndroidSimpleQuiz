@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.button.MaterialButton;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button quizButton, questionsButton;
+    MaterialButton quizButton, questionsButton;
     List<Question> listOfQuestions;
 
     @Override

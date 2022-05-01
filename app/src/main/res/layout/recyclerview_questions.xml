@@ -9,13 +9,21 @@
         android:id="@+id/recycler_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:fontFamily="sans-serif-condensed-light"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/recycler_answer"
-        android:textAlignment="viewEnd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="3"/>
+        android:layout_weight="3"
+        android:fontFamily="sans-serif-condensed-light"
+        android:paddingRight="10dp"
+        android:textAlignment="viewEnd"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 </LinearLayout>

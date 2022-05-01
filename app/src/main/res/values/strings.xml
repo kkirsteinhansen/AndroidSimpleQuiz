@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">SimpleQuiz</string>
+
+    <string
+        name="main_desc"><font color="#000">
+        Click on <b>Questions</b> to see, add or remove questions,
+        or click on <b>Quiz!</b>\nto begin the quiz.</font></string>
+
+    <string
+        name="player_desc"><font color="#000">Write the names of up to</font>
+        <b><font color="#db8c42">4</font></b>
+        <font color="#000">players.</font></string>
+
+    <string
+        name="question_desc"><font color="#000">
+        Here you can manage the\nquestions in the database.</font></string>
+
+    <string
+        name="remove_question"><font color="#db8c42"><b>All questions</b></font>
+        <font color="#000">(click to</font>
+        <font color="#bd0606">remove</font><font color="#000">)<b>:</b></font></string>
+
+    <string
+        name="true_false"><font color="#000"><b>TRUE</b> OR <b>FALSE</b>:</font></string>
+
 </resources>

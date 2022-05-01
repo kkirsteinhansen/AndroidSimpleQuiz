@@ -10,13 +10,15 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="25dp"
+        android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
-        android:text="FINAL RESULTS"
+        android:text="Final\nResults"
         android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="38sp"
         app:layout_constraintBottom_toTopOf="@+id/winner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,32 +46,42 @@
         android:id="@+id/winner"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:gravity="center"
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:textAlignment="center"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_list_top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/back_to_main"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
+        android:layout_height="@dimen/button_height"
+        android:backgroundTint="@color/white"
+        android:text=" BACK TO MAIN MENU"
+        android:textColor="@color/orange"
+        android:textSize="@dimen/button_text_size"
+        app:cornerRadius="@dimen/button_corner"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_list_bottom" />
+        app:layout_constraintTop_toTopOf="@+id/guideline_list_bottom"
+        app:strokeColor="@color/orange"
+        app:strokeWidth="@dimen/button_stroke" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="634dp" />
+        app:layout_constraintGuide_begin="610dp" />
 
     <ImageView
         android:id="@+id/fourth_icon"
@@ -107,9 +119,12 @@
     <TextView
         android:id="@+id/fourth_name"
         android:layout_width="120dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/guideline_list_bottom"
         app:layout_constraintEnd_toStartOf="@+id/fourth_score"
@@ -119,9 +134,12 @@
     <TextView
         android:id="@+id/second_score"
         android:layout_width="40dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:paddingRight="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/third_score"
         app:layout_constraintEnd_toStartOf="@+id/second_icon"
@@ -131,9 +149,12 @@
     <TextView
         android:id="@+id/fourth_score"
         android:layout_width="40dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:paddingRight="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/guideline_list_bottom"
         app:layout_constraintEnd_toStartOf="@+id/fourth_icon"
@@ -143,9 +164,12 @@
     <TextView
         android:id="@+id/third_name"
         android:layout_width="120dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/fourth_name"
         app:layout_constraintEnd_toStartOf="@+id/third_score"
@@ -155,9 +179,12 @@
     <TextView
         android:id="@+id/second_name"
         android:layout_width="120dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/third_name"
         app:layout_constraintEnd_toStartOf="@+id/second_score"
@@ -180,9 +207,12 @@
     <TextView
         android:id="@+id/first_score"
         android:layout_width="40dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:paddingRight="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/second_score"
         app:layout_constraintEnd_toStartOf="@+id/first_icon"
@@ -192,9 +222,12 @@
     <TextView
         android:id="@+id/first_name"
         android:layout_width="120dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/second_name"
         app:layout_constraintEnd_toStartOf="@+id/first_score"
@@ -204,9 +237,12 @@
     <TextView
         android:id="@+id/third_score"
         android:layout_width="40dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:paddingRight="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/fourth_score"
         app:layout_constraintEnd_toStartOf="@+id/third_icon"
@@ -281,14 +317,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="194dp" />
+        app:layout_constraintGuide_begin="215dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_list_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="494dp" />
+        app:layout_constraintGuide_begin="526dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_list_left"

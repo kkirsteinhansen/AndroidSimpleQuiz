@@ -15,9 +15,12 @@
 
     <TextView
         android:id="@+id/p1_name_sc"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="30dp"
+        android:fontFamily="sans-serif-condensed-"
         android:gravity="center_vertical"
+        android:textColor="@color/grey"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/p2_name_sc"
         app:layout_constraintEnd_toStartOf="@+id/p1_score_sc"
         app:layout_constraintStart_toStartOf="@id/guideline6"
@@ -26,9 +29,12 @@
 
     <TextView
         android:id="@+id/p3_name_sc"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="30dp"
+        android:fontFamily="sans-serif-condensed-"
         android:gravity="center_vertical"
+        android:textColor="@color/grey"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/p4_name_sc"
         app:layout_constraintEnd_toStartOf="@+id/p3_score_sc"
         app:layout_constraintStart_toEndOf="@id/guideline13"
@@ -37,9 +43,12 @@
 
     <TextView
         android:id="@+id/p2_name_sc"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="30dp"
+        android:fontFamily="sans-serif-condensed-"
         android:gravity="center_vertical"
+        android:textColor="@color/grey"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/p2_score_sc"
         app:layout_constraintStart_toStartOf="@id/guideline6"
@@ -48,9 +57,12 @@
 
     <TextView
         android:id="@+id/p4_name_sc"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="30dp"
+        android:fontFamily="sans-serif-condensed-"
         android:gravity="center_vertical"
+        android:textColor="@color/grey"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@+id/p4_score_sc"
         app:layout_constraintStart_toEndOf="@id/guideline13"
@@ -61,7 +73,10 @@
         android:id="@+id/p1_score_sc"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:fontFamily="sans-serif-condensed-"
         android:gravity="center_vertical"
+        android:textColor="@color/grey"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/p2_score_sc"
         app:layout_constraintEnd_toStartOf="@id/guideline11"
         app:layout_constraintStart_toEndOf="@+id/p1_name_sc"
@@ -72,7 +87,10 @@
         android:id="@+id/p2_score_sc"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:fontFamily="sans-serif-condensed-"
         android:gravity="center_vertical"
+        android:textColor="@color/grey"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toStartOf="@id/guideline11"
         app:layout_constraintStart_toEndOf="@+id/p2_name_sc"
@@ -83,7 +101,10 @@
         android:id="@+id/p3_score_sc"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:fontFamily="sans-serif-condensed-"
         android:gravity="center_vertical"
+        android:textColor="@color/grey"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/p4_score_sc"
         app:layout_constraintEnd_toEndOf="@id/guideline12"
         app:layout_constraintStart_toEndOf="@+id/p3_name_sc"
@@ -94,7 +115,10 @@
         android:id="@+id/p4_score_sc"
         android:layout_width="30dp"
         android:layout_height="30dp"
+        android:fontFamily="sans-serif-condensed-"
         android:gravity="center_vertical"
+        android:textColor="@color/grey"
+        android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="@id/guideline12"
         app:layout_constraintStart_toEndOf="@+id/p4_name_sc"
@@ -113,7 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.45" />
+        app:layout_constraintGuide_percent="0.47" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline12"
@@ -127,7 +151,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.55" />
+        app:layout_constraintGuide_percent="0.53" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

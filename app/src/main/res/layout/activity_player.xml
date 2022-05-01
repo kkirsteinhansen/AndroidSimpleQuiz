@@ -34,15 +34,18 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="100dp"
         android:text="Who's playing?"
         android:textAlignment="center"
+        android:textSize="@dimen/heading_size"
+        app:layout_constraintBottom_toTopOf="@+id/winner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textColor="@color/black" />
 
     <ImageView
         android:id="@+id/first_img"
@@ -72,7 +75,10 @@
         android:id="@+id/first_name"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:text="Player 1"
+        android:background="@android:color/transparent"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="Player 1"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/second_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -83,7 +89,10 @@
         android:id="@+id/second_name"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:text="Player 2"
+        android:background="@android:color/transparent"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="Player 2"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/third_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -94,7 +103,10 @@
         android:id="@+id/third_name"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:text="Player 3"
+        android:background="@android:color/transparent"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="Player 3"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/fourth_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -105,7 +117,10 @@
         android:id="@+id/fourth_name"
         android:layout_width="200dp"
         android:layout_height="40dp"
-        android:text="Player 4"
+        android:background="@android:color/transparent"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="Player 4"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -135,62 +150,60 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="25dp"
-        android:text="Description"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="@string/player_desc"
+        android:textSize="@dimen/desc_size"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/participants_begin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
         android:text="BEGIN"
-        app:layout_constraintBottom_toTopOf="@+id/back_to_main"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner"
+        android:textSize="@dimen/button_text_size"
+        app:layout_constraintBottom_toTopOf="@id/guideline1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline7" />
 
-    <Button
-        android:id="@+id/back_to_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
-        app:layout_constraintBottom_toTopOf="@+id/guideline1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/participants_begin" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="634dp" />
+        app:layout_constraintGuide_begin="587dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="488dp" />
+        app:layout_constraintGuide_begin="520dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="164dp" />
+        app:layout_constraintGuide_begin="208dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="445dp" />
+        app:layout_constraintGuide_begin="487dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,49 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="20dp">
+    android:layout_margin="25dp">
 
     <TextView
         android:id="@+id/addquestion_heading"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Questions"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:padding="20dp"
+        android:text="Manage Questions"
         android:textAlignment="center"
-        android:padding="20dp" />
+        android:textColor="@color/black"
+        android:textSize="35sp" />
 
     <TextView
         android:id="@+id/addquestion_description"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="Description"
-        android:layout_marginBottom="20dp"
-        android:textAlignment="center"
-        android:padding="20dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="@string/question_desc"
+        android:textColor="@color/black"
+        android:textSize="@dimen/desc_size" />
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:text="Statement:  *" />
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Add a new question:"
+        android:textColor="@color/orange"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/addquestion_question"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_marginBottom="10dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:text="Answer:  *" />
+        android:background="@android:color/transparent"
+        android:fontFamily="sans-serif-condensed"
+        android:hint="Type in a new question here..."
+        android:textSize="19sp" />
 
     <RadioGroup
         android:id="@+id/addquestion_radiogroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
         android:gravity="center"
-        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <RadioButton
@@ -51,29 +60,53 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
+            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
-            android:text="TRUE" />
+            android:text="TRUE"
+            android:textSize="16sp" />
 
         <RadioButton
             android:id="@+id/addquestion_radiofalse"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
-            android:text="FALSE" />
+            android:text="FALSE"
+            android:textSize="16sp" />
     </RadioGroup>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/addquestion_add"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
         android:layout_gravity="center"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:text="ADD QUESTION"/>
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="@color/white"
+        android:text="ADD QUESTION"
+        android:textColor="@color/orange"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:cornerRadius="@dimen/button_corner"
+        app:strokeColor="@color/orange"
+        app:strokeWidth="@dimen/button_stroke" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/remove_question"
+        android:textSize="18sp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="20dp"
         android:id="@+id/lq_rv"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginBottom="20dp"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@color/light_orange"
+        android:scrollbarTrackVertical="@color/light_grey"
+        android:fadeScrollbars="false"
+        />
 
 </LinearLayout>

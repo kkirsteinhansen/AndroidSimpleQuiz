@@ -7,12 +7,16 @@
 
     <TextView
         android:id="@+id/current_question"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@id/p1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/textView2" />
 
     <!--- PLAYER 1'S OPTIONS -->
     <TextView
@@ -20,8 +24,12 @@
         android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/p2"
         app:layout_constraintEnd_toStartOf="@id/rg_p1"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,16 +52,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
-            android:text="TRUE" />
+            android:text="TRUE"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
 
         <RadioButton
             android:id="@+id/p1_false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
-            android:text="FALSE" />
+            android:text="FALSE"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
 
     </RadioGroup>
 
@@ -62,8 +76,12 @@
         android:id="@+id/p2"
         android:layout_width="140dp"
         android:layout_height="50dp"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/p3"
         app:layout_constraintEnd_toStartOf="@id/rg_p2"
         app:layout_constraintStart_toStartOf="parent"
@@ -85,16 +103,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
-            android:text="TRUE" />
+            android:text="TRUE"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
 
         <RadioButton
             android:id="@+id/p2_false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
-            android:text="FALSE" />
+            android:text="FALSE"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
 
     </RadioGroup>
 
@@ -103,8 +127,12 @@
         android:id="@+id/p3"
         android:layout_width="140dp"
         android:layout_height="50dp"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/p4"
         app:layout_constraintEnd_toStartOf="@id/rg_p3"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,16 +154,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
-            android:text="TRUE" />
+            android:text="TRUE"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
 
         <RadioButton
             android:id="@+id/p3_false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
-            android:text="FALSE" />
+            android:text="FALSE"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
 
     </RadioGroup>
 
@@ -144,8 +178,12 @@
         android:id="@+id/p4"
         android:layout_width="140dp"
         android:layout_height="50dp"
+        android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/rg_p4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/p3" />
@@ -166,27 +204,52 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
-            android:text="TRUE" />
+            android:text="TRUE"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
 
         <RadioButton
             android:id="@+id/p4_false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="sans-serif-condensed"
             android:paddingLeft="5dp"
-            android:text="FALSE" />
+            android:text="FALSE"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
 
     </RadioGroup>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
         android:layout_marginTop="20dp"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="Submit"
+        android:textSize="@dimen/button_text_size"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/button_corner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rg_p4" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/true_false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/current_question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

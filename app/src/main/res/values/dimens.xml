@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="button_width">140dp</dimen>
+    <dimen name="button_corner">30dp</dimen>
+    <dimen name="button_text_size">17sp</dimen>
+    <dimen name="button_stroke">3dp</dimen>
+
+    <dimen name="heading_size">36sp</dimen>
+    <dimen name="desc_size">19sp</dimen>
+</resources>

@@ -13,9 +13,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.google.android.material.button.MaterialButton;
+
 public class PlayerActivity extends AppCompatActivity {
 
-    private Button beginButton, backButton;
+    private MaterialButton beginButton;
     private Context context;
     private EditText[] players;
     private Drawable[] images;
@@ -29,7 +31,6 @@ public class PlayerActivity extends AppCompatActivity {
 
         // Buttons
         beginButton = findViewById(R.id.participants_begin);
-        backButton = findViewById(R.id.back_to_main);
 
         // EditTexts
         EditText p1 = findViewById(R.id.first_name);
@@ -66,13 +67,6 @@ public class PlayerActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(context, QuizActivity.class);
                 startActivity(intent);
-            }
-        });
-
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
             }
         });
     }

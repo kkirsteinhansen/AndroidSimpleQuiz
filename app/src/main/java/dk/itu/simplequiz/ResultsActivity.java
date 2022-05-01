@@ -12,6 +12,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.google.android.material.button.MaterialButton;
+
 import java.util.List;
 
 public class ResultsActivity extends AppCompatActivity {
@@ -78,7 +80,7 @@ public class ResultsActivity extends AppCompatActivity {
 
         Player.getListOfPlayers().clear();
 
-        Button back = findViewById(R.id.back_to_main);
+        MaterialButton back = findViewById(R.id.back_to_main);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
