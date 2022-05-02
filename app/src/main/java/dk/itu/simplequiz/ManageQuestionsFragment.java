@@ -12,11 +12,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class QuestionsActivity extends AppCompatActivity {
+public class ManageQuestionsFragment extends Fragment {
 
     private EditText questionField;
     private RadioGroup radioGroup;
@@ -27,19 +27,25 @@ public class QuestionsActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questions);
 
-        liveQuestions = new QuestionsViewModel(getApplication());
-        context = QuestionsActivity.this;
+        liveQuestions = new QuestionsViewModel(getActivity().getApplication());
+        context = getContext();
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View  questionsMenu = inflater.inflate(R.layout.fragment_manage_questions, container, false);
 
         // EditText
-        questionField = findViewById(R.id.addquestion_question);
+        questionField = questionsMenu.findViewById(R.id.addquestion_question);
 
         // RadioGroup
-        radioGroup = findViewById(R.id.addquestion_radiogroup);
+        radioGroup = questionsMenu.findViewById(R.id.addquestion_radiogroup);
 
         // Button
-        Button addButton = findViewById(R.id.addquestion_add);
+        Button addButton = questionsMenu.findViewById(R.id.addquestion_add);
 
         // Button functionality
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -66,13 +72,15 @@ public class QuestionsActivity extends AppCompatActivity {
         });
 
         // RecyclerView
-        recycler = findViewById(R.id.lq_rv);
-        recycler.setLayoutManager(new LinearLayoutManager(this));
+        recycler = questionsMenu.findViewById(R.id.lq_rv);
+        recycler.setLayoutManager(new LinearLayoutManager(context));
         QuestionAdapter adapter = new QuestionAdapter();
         recycler.setAdapter(adapter);
         // Observer (part of RecyclerView)
         liveQuestions.getObservable().observe(this,
                 q -> adapter.notifyDataSetChanged());
+
+        return questionsMenu;
     }
 
     private boolean radioButtonChecked(int id) {
@@ -132,7 +140,6 @@ public class QuestionsActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             // Get input from RecyclerView OnClick
-            // https://stackoverflow.com/questions/5754887/accessing-view-inside-the-linearlayout-with-code
             String q = (String)((TextView)v.findViewById(R.id.recycler_question)).getText();
             liveQuestions.remove(q); // Remove question on click
             Message.show(context, Message.QUESTION_REMOVED);

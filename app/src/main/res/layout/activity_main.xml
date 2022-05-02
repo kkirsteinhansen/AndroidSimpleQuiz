@@ -1,102 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/welcome_tv"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="80dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:gravity="center"
-        android:text="WELCOME TO"
-        android:textColor="#000"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/appName_tv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/appName_tv"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="25dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:gravity="center"
-        android:text="SimpleQuiz"
-        android:textColor="@color/orange"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/desc_tv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome_tv" />
-
-    <TextView
-        android:id="@+id/desc_tv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:gravity="center"
-        android:text="@string/main_desc"
-        android:textSize="@dimen/desc_size"
-        app:layout_constraintBottom_toTopOf="@+id/quiz"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appName_tv" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/quiz"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="15dp"
-        android:backgroundTint="@color/orange"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Quiz!"
-        android:textStyle="bold"
-        app:cornerRadius="@dimen/button_corner"
-        android:textSize="@dimen/button_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/questions"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc_tv" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/questions"
-        android:layout_width="@dimen/button_width"
-        android:layout_height="@dimen/button_height"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Questions"
-        android:textColor="@color/orange"
-        android:textStyle="bold"
-        app:cornerRadius="@dimen/button_corner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="@dimen/button_stroke"
-        android:textSize="@dimen/button_text_size" />
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

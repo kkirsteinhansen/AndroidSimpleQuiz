@@ -84,8 +84,7 @@ public class Player extends ViewModel implements Comparable<Player> {
         List<Player> ranked = listOfPlayers;
         int highestScore = ranked.get(0).getScore();
 
-        if (highestScore == 0) return "Uh oh! No one got a single point.\n" +
-                "Perhaps a bit of studying is in order?";
+        if (highestScore == 0) return "Uh oh! No one got a single point.";
 
         int numOfWinners = 1;
         for (int i = 1; i < ranked.size(); i++) {
