@@ -1,4 +1,4 @@
-# AndroidSimpleQuiz
+# AndroidSimpleQuiz (school project)
 
 Player icons:
 <a href="https://www.flaticon.com/free-icons/bear" title="bear icons">Bear icons created by Freepik - Flaticon</a>
