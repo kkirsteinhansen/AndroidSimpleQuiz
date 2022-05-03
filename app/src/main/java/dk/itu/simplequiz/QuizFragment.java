@@ -188,8 +188,8 @@ public class QuizFragment extends Fragment {
     }
 
     private String getRemainingString() {
-        if (listOfQuestions.size()-1-index > 1) return "  questions remaining";
-        return "  question remaining";
+        if (listOfQuestions.size()-1-index == 1) return "  question  remaining";
+        return "  questions remaining";
     }
 
     /**
