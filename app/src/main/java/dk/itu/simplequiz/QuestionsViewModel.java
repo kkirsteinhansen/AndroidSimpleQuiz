@@ -21,11 +21,26 @@ public class QuestionsViewModel extends AndroidViewModel {
         }
     }
 
+    /**
+     * This method is a wrapper method for the corresponding add() method in
+     * the Question class. This method calls the original method and then resets the
+     * value of the MutableLiveData object. This ensures that the observer is
+     * notified of a change in the data.
+     * @param q the question
+     * @param a the answer
+     */
     public void add(String q, boolean a) {
         Question.addQuestion(q, a);
         liveQuestions.setValue(Question.getListOfQuestions());
     }
 
+    /**
+     * This method is a wrapper method for the corresponding remove() method in
+     * the Question class. This method calls the original method and then resets the
+     * value of the MutableLiveData object. This ensures that the observer is
+     * notified of a change in the data.
+     * @param q a string matching the question to be removed
+     */
     public void remove(String q) {
         Question.removeQuestion(q);
         liveQuestions.setValue(Question.getListOfQuestions());

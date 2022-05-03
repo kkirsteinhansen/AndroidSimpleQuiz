@@ -18,8 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ManageQuestionsFragment extends Fragment {
 
-    private QuestionsViewModel liveQuestions;
     private Context context;
+    private QuestionsViewModel liveQuestions;
 
     private EditText questionField;
     private RadioGroup radioGroup;
@@ -28,7 +28,8 @@ public class ManageQuestionsFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        liveQuestions = new QuestionsViewModel(getActivity().getApplication()); // Create ViewModel
+        // Get LiveData
+        liveQuestions = new QuestionsViewModel(getActivity().getApplication());
         context = getContext(); // Save context in variable for easy use
     }
 
@@ -38,7 +39,7 @@ public class ManageQuestionsFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        // Inflate fragment layout
+        // Inflate layout
         View questionsMenu = inflater
                 .inflate(R.layout.fragment_manage_questions, container, false);
 
