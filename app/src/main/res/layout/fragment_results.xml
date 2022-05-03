@@ -52,7 +52,6 @@
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="22sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline_list_top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

@@ -99,7 +99,7 @@ public class ResultsFragment extends Fragment {
             rankIcons[playerRanking.size()-1].setImageDrawable(skull);
 
         // Clear list of players to avoid problems when starting a new game
-        Player.getListOfPlayers().clear();
+        Player.clearAll();
 
         // Button
         MaterialButton back = results.findViewById(R.id.back_to_main);

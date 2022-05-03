@@ -99,6 +99,10 @@ public class Player extends ViewModel implements Comparable<Player> {
         } return true;
     }
 
+    public static void clearAll() {
+        if (listOfPlayers != null) listOfPlayers.clear();
+    }
+
     /**
      * This method creates a string with a message congratulating the winner(s).
      * The message differs depending on the number of winners and losers.
@@ -114,7 +118,7 @@ public class Player extends ViewModel implements Comparable<Player> {
         for (int i = 1; i < ranked.size(); i++) {
             if (ranked.get(i).getScore() == highestScore) numOfWinners++; }
 
-        String congrats = "Congratulations, ";
+        String congrats = "Congratulations,\n";
 
         switch (numOfWinners) {
             case 1: return congrats + ranked.get(0).getName() + "!";
@@ -123,3 +127,4 @@ public class Player extends ViewModel implements Comparable<Player> {
                     + ranked.get(2).getName() + "!";
         } return congrats + "everyone!"; }
 }
+

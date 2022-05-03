@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +45,11 @@ public class MainMenuFragment extends Fragment {
                 if (listOfQuestions.isEmpty()) {  // Cannot start quiz if there are no questions
                     Message.show(getActivity(), Message.NO_QUESTIONS);
                     return; }
+
+                // This is needed in case the user has returned
+                // to the main menu from an unfinished quiz
+                Player.clearAll();
+
                 Navigation.findNavController(view)
                         .navigate(R.id.action_mainMenuFragment_to_playerFragment); }
         });

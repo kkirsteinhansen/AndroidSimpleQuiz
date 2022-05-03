@@ -9,7 +9,9 @@
     <string
         name="player_desc"><font color="#000">Write the names of up to</font>
         <b><font color="#db8c42">4</font></b>
-        <font color="#000">players.</font></string>
+        <font color="#000">players.</font>
+        <font color="#000">\nChoose whichever avatar you\'d like!</font>
+    </string>
 
     <string
         name="question_desc"><font color="#000">

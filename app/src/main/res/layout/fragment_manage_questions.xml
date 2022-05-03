@@ -82,10 +82,11 @@
         android:layout_gravity="center"
         android:layout_marginBottom="70dp"
         android:backgroundTint="@color/white"
+        android:fontFamily="sans-serif-smallcaps"
         android:text="ADD QUESTION"
         android:textColor="@color/orange"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:textSize="14sp"
         app:cornerRadius="@dimen/button_corner"
         app:strokeColor="@color/orange"
         app:strokeWidth="@dimen/button_stroke" />

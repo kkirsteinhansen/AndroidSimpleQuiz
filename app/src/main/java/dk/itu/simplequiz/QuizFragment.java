@@ -125,9 +125,6 @@ public class QuizFragment extends Fragment {
                     Message.show(context, Message.MISSING_ANSWER);
                     return; }
                 checkAnswers();
-                if (secondToLastQuestion()) {
-                    nextQuestionButton.setVisibility(View.GONE);
-                    getResultsButton.setVisibility(View.VISIBLE); }
                 getNextQuestion(); }
         });
 
@@ -182,9 +179,6 @@ public class QuizFragment extends Fragment {
         if (index == listOfQuestions.size()-1) {
             nextQuestionButton.setVisibility(View.GONE);
             getResultsButton.setVisibility(View.VISIBLE);
-            endEarlyButton.setVisibility(View.INVISIBLE);
-            remainingNum.setVisibility(View.INVISIBLE);
-            remainingString.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -196,10 +190,6 @@ public class QuizFragment extends Fragment {
     private String getRemainingString() {
         if (listOfQuestions.size()-1-index > 1) return "  questions remaining";
         return "  question remaining";
-    }
-
-    private boolean secondToLastQuestion() {
-        return index == listOfQuestions.size()-2;
     }
 
     /**
