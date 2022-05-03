@@ -19,8 +19,8 @@ import com.google.android.material.button.MaterialButton;
 
 public class PlayerFragment extends Fragment {
 
-    private MaterialButton beginButton;
     private Context context;
+
     private EditText[] players;
     private Drawable[] images;
 
@@ -28,18 +28,18 @@ public class PlayerFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        context = getContext();
+        context = getContext(); // For easy use later on
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View playerMenu = inflater.inflate(R.layout.fragment_players, container, false);
-        // Buttons
-        beginButton = playerMenu.findViewById(R.id.participants_begin);
+        // Inflate layout
+        View playerMenu = inflater
+                .inflate(R.layout.fragment_players, container, false);
 
-        // EditTexts
+        // EditTexts and Drawables
         EditText p1 = playerMenu.findViewById(R.id.first_name);
         EditText p2 = playerMenu.findViewById(R.id.second_name);
         EditText p3 = playerMenu.findViewById(R.id.third_name);
@@ -56,28 +56,35 @@ public class PlayerFragment extends Fragment {
         // Players
         Player.initPlayers();
 
+        // Button
+        MaterialButton beginButton = playerMenu.findViewById(R.id.participants_begin);
         beginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                // Check for minimum number of players
                 if (!enoughPlayers()) {
                     Message.show(context, Message.NOT_ENOUGH_PLAYERS);
-                    return;
-                }
+                    return; }
 
+                // Add players
                 for (int i = 0; i < players.length; i++) {
                     String name = players[i].getText().toString();
                     if (!name.equals(""))
-                        Player.addPlayer(name, images[i]);
-                }
+                        Player.addPlayer(name, images[i]); }
 
-                Navigation.findNavController(view).navigate(R.id.action_playerFragment_to_quizFragment);
-            }
+                Navigation.findNavController(view)
+                        .navigate(R.id.action_playerFragment_to_quizFragment); }
         });
 
         return playerMenu;
     }
 
+    /**
+     * This method checks whether the current contents of the EditText fields corresponds
+     * to the minimum number of players required for the quiz (2).
+     * @return true if at least 2 EditText fields contain text, false otherwise
+     */
     private boolean enoughPlayers() {
         int num = 0;
         for (EditText field : players) {

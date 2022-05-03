@@ -18,79 +18,98 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ManageQuestionsFragment extends Fragment {
 
-    private EditText questionField;
-    private RadioGroup radioGroup;
     private QuestionsViewModel liveQuestions;
     private Context context;
-    private RecyclerView recycler;
+
+    private EditText questionField;
+    private RadioGroup radioGroup;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        liveQuestions = new QuestionsViewModel(getActivity().getApplication());
-        context = getContext();
+        liveQuestions = new QuestionsViewModel(getActivity().getApplication()); // Create ViewModel
+        context = getContext(); // Save context in variable for easy use
     }
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
 
-        View  questionsMenu = inflater.inflate(R.layout.fragment_manage_questions, container, false);
+        // Inflate fragment layout
+        View questionsMenu = inflater
+                .inflate(R.layout.fragment_manage_questions, container, false);
 
-        // EditText
         questionField = questionsMenu.findViewById(R.id.addquestion_question);
-
-        // RadioGroup
         radioGroup = questionsMenu.findViewById(R.id.addquestion_radiogroup);
 
         // Button
         Button addButton = questionsMenu.findViewById(R.id.addquestion_add);
-
-        // Button functionality
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                // Check for missing question
                 if (fieldEmpty(questionField)) {
                     Message.show(context, Message.MISSING_QUESTION);
-                    return;
-                }
+                    return; }
+
                 int radioButtonId = radioGroup.getCheckedRadioButtonId();
+
+                // Check for missing answer
                 if (!radioButtonChecked(radioButtonId)) {
                     Message.show(context, Message.MISSING_ANSWER);
                     return; }
 
                 String q = questionField.getText().toString();
                 boolean a = findRadioButton(radioButtonId);
+
                 liveQuestions.add(q, a);
                 Message.show(context, Message.QUESTION_ADDED);
 
+                // Clear fields
                 questionField.setText("");
-                radioGroup.clearCheck();
-            }
+                radioGroup.clearCheck(); }
         });
 
         // RecyclerView
-        recycler = questionsMenu.findViewById(R.id.lq_rv);
+        RecyclerView recycler = questionsMenu.findViewById(R.id.recycler_container);
         recycler.setLayoutManager(new LinearLayoutManager(context));
         QuestionAdapter adapter = new QuestionAdapter();
         recycler.setAdapter(adapter);
-        // Observer (part of RecyclerView)
+
         liveQuestions.getObservable().observe(this,
                 q -> adapter.notifyDataSetChanged());
 
         return questionsMenu;
     }
 
+    /**
+     * This method checks whether a radio button has been checked or not.
+     * @param id the id of the checked radio button (-1 if no button is checked)
+     * @return true if a button has been checked, false otherwise
+     */
     private boolean radioButtonChecked(int id) {
         return id != -1;
     }
 
+    /**
+     * This method returns the answer to a question as indicated by the checked
+     * radio button.
+     * @param answerId the id of the checked radio button
+     * @return true if the 'true' button has been checked, false otherwise
+     */
     private boolean findRadioButton(int answerId) {
         return answerId == R.id.addquestion_radiotrue;
     }
 
+    /**
+     * This method checks whether the question field is empty.
+     * @param field the EditText field
+     * @return true if the contents of the field is equal to the empty string, false otherwise
+     */
     private boolean fieldEmpty(EditText field) {
         return field.getText().toString().equals("");
     }
@@ -122,24 +141,24 @@ public class ManageQuestionsFragment extends Fragment {
 
     public class QuestionHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView recycler_tv, recycler_answer;
+        private TextView recyclerQuestion, recyclerAnswer;
 
         public QuestionHolder(@NonNull View v) {
             super(v);
-            recycler_tv = v.findViewById(R.id.recycler_question);
-            recycler_answer = v.findViewById(R.id.recycler_answer);
+            recyclerQuestion = v.findViewById(R.id.recycler_question);
+            recyclerAnswer = v.findViewById(R.id.recycler_answer);
             v.setOnClickListener(this);
         }
 
         public void bind(String q, int i, String a) {
             // i is unused because the questions should not be numbered in the UI
-            recycler_tv.setText(q);
-            recycler_answer.setText(a);
+            recyclerQuestion.setText(q);
+            recyclerAnswer.setText(a);
         }
 
         @Override
         public void onClick(View v) {
-            // Get input from RecyclerView OnClick
+            // Get input from RecyclerView on click
             String q = (String)((TextView)v.findViewById(R.id.recycler_question)).getText();
             liveQuestions.remove(q); // Remove question on click
             Message.show(context, Message.QUESTION_REMOVED);

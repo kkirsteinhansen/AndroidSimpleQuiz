@@ -9,6 +9,10 @@ public class DatabaseCursorWrapper extends CursorWrapper {
         super(cursor);
     }
 
+    /**
+     * This method converts a row in the database to a new question object.
+     * @return a question from the database
+     */
     public Question toQuestion() {
         String q = getString(getColumnIndex(Database.QUESTION_COL));
         boolean a = (getInt(getColumnIndex(Database.ANSWER_COL)) == 1);

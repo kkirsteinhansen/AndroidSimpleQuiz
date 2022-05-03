@@ -24,6 +24,13 @@ public class PlayerViewModel extends AndroidViewModel {
         return livePlayers;
     }
 
+    /**
+     * This method is a wrapper method for the corresponding addPoint() method in
+     * the Player class. This method calls the original method and then resets the
+     * value of the MutableLiveData object. This ensures that the observer is
+     * notified of a change in the data.
+     * @param p the player who should receive a point
+     */
     public void addPoint(Player p) {
         p.addPoint();
         livePlayers.setValue(Player.initPlayers());

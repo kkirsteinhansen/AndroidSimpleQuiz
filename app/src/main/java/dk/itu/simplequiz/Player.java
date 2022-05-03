@@ -10,10 +10,11 @@ import java.util.List;
 
 public class Player extends ViewModel implements Comparable<Player> {
 
-    private String name;
-    private int score;
-    private Drawable img;
     private static List<Player> listOfPlayers;
+
+    private String name;
+    private Drawable img;
+    private int score;
 
     public Player(String name, Drawable img) {
         this.name = name;
@@ -21,6 +22,10 @@ public class Player extends ViewModel implements Comparable<Player> {
         score = 0;
     }
 
+    /**
+     * This method initializes a list of players if such a list does not already exist.
+     * @return the list of players
+     */
     public static List<Player> initPlayers() {
         if (listOfPlayers == null) {
             listOfPlayers = new ArrayList<>();
@@ -49,6 +54,11 @@ public class Player extends ViewModel implements Comparable<Player> {
         return img;
     }
 
+    /**
+     * This method adds a new player to the static list of players.
+     * @param name the name of the new player
+     * @param img the avatar belonging to the new player
+     */
     public static void addPlayer(String name, Drawable img) {
         listOfPlayers.add(new Player(name, img));
     }
@@ -64,6 +74,11 @@ public class Player extends ViewModel implements Comparable<Player> {
         return 0;
     }
 
+    /**
+     * This method makes a copy of the existing list of players and sorts it
+     * in descending order according to score.
+     * @return a list of players sorted according to score (highest to lowest)
+     */
     public static List<Player> getRankedList() {
         List<Player> ranked = listOfPlayers;
         Collections.sort(ranked);
@@ -71,15 +86,24 @@ public class Player extends ViewModel implements Comparable<Player> {
         return ranked;
     }
 
+    /**
+     * This method checks whether the lowest score belongs to a single player
+     * or is shared between multiple players.
+     * @return true if the lowest score belongs to a single player, false otherwise
+     */
     public static boolean singleLowestScore() {
         List<Player> ranked = getRankedList();
         int lowestScore = ranked.get(ranked.size()-1).getScore();
         for (int i = 0; i < ranked.size()-1; i++) {
             if (ranked.get(i).getScore() == lowestScore) return false;
-        }
-        return true;
+        } return true;
     }
 
+    /**
+     * This method creates a string with a message congratulating the winner(s).
+     * The message differs depending on the number of winners and losers.
+     * @return a string message
+     */
     public static String getWinner() {
         List<Player> ranked = listOfPlayers;
         int highestScore = ranked.get(0).getScore();

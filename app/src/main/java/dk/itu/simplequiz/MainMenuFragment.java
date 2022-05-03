@@ -24,9 +24,8 @@ public class MainMenuFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Question.initQuestions(getActivity());
+        Question.initQuestions(getActivity()); // Initialize a list of questions
         listOfQuestions = Question.getListOfQuestions();
-
     }
 
     @Nullable
@@ -35,28 +34,28 @@ public class MainMenuFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View  mainMenu = inflater.inflate(R.layout.fragment_main_menu, container, false);
+        // Inflate layout
+        View  mainMenu = inflater
+                .inflate(R.layout.fragment_main_menu, container, false);
 
         // Buttons
         quizButton = mainMenu.findViewById(R.id.quiz);
         quizButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Cannot start quiz if there are no questions
-                if (listOfQuestions.isEmpty()) {
+                if (listOfQuestions.isEmpty()) {  // Cannot start quiz if there are no questions
                     Message.show(getActivity(), Message.NO_QUESTIONS);
-                    return;
-                }
-                Navigation.findNavController(view).navigate(R.id.action_mainMenuFragment_to_playerFragment);
-            }
+                    return; }
+                Navigation.findNavController(view)
+                        .navigate(R.id.action_mainMenuFragment_to_playerFragment); }
         });
 
         questionsButton = mainMenu.findViewById(R.id.questions);
         questionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_mainMenuFragment_to_questionsActivity);
-            }
+                Navigation.findNavController(view)
+                        .navigate(R.id.action_mainMenuFragment_to_questionsActivity); }
         });
 
         return mainMenu;
