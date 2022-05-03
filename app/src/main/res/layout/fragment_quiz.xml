@@ -23,7 +23,7 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/p2_name_sc"
         app:layout_constraintEnd_toStartOf="@+id/p1_score_sc"
-        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline_5left"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="invisible" />
 
@@ -51,7 +51,7 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/top_section"
         app:layout_constraintEnd_toStartOf="@+id/p2_score_sc"
-        app:layout_constraintStart_toStartOf="@id/guideline6"
+        app:layout_constraintStart_toStartOf="@id/guideline_5left"
         app:layout_constraintTop_toBottomOf="@+id/p1_name_sc"
         tools:visibility="invisible" />
 
@@ -106,7 +106,7 @@
         android:textColor="@color/grey"
         android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/p4_score_sc"
-        app:layout_constraintEnd_toEndOf="@id/guideline12"
+        app:layout_constraintEnd_toEndOf="@id/guideline_5right"
         app:layout_constraintStart_toEndOf="@+id/p3_name_sc"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="invisible" />
@@ -120,13 +120,13 @@
         android:textColor="@color/grey"
         android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/top_section"
-        app:layout_constraintEnd_toEndOf="@id/guideline12"
+        app:layout_constraintEnd_toEndOf="@id/guideline_5right"
         app:layout_constraintStart_toEndOf="@+id/p4_name_sc"
         app:layout_constraintTop_toBottomOf="@+id/p3_score_sc"
         tools:visibility="invisible" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline6"
+        android:id="@+id/guideline_5left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -140,7 +140,7 @@
         app:layout_constraintGuide_percent="0.47" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline12"
+        android:id="@+id/guideline_5right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -157,22 +157,21 @@
     <TextView
         android:id="@+id/current_question"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:fontFamily="sans-serif-condensed-light"
         android:gravity="center_horizontal"
         android:textColor="@color/black"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@id/p1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_40top"
+        app:layout_constraintEnd_toEndOf="@id/guideline_5right"
+        app:layout_constraintStart_toStartOf="@id/guideline_5left"
         app:layout_constraintTop_toBottomOf="@id/textView2" />
 
     <!--- PLAYER 1'S OPTIONS -->
     <TextView
         android:id="@+id/p1"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
         android:paddingLeft="35dp"
@@ -180,21 +179,20 @@
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/p2"
-        app:layout_constraintEnd_toStartOf="@id/rg_p1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/current_question" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline_middle"
+        app:layout_constraintStart_toStartOf="@id/guideline_5left"
+        app:layout_constraintTop_toBottomOf="@id/guideline_40top" />
 
     <RadioGroup
         android:id="@+id/rg_p1"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/rg_p2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/p1"
-        app:layout_constraintTop_toBottomOf="@+id/current_question">
+        app:layout_constraintEnd_toEndOf="@id/guideline_5right"
+        app:layout_constraintStart_toEndOf="@+id/guideline_middle"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_40top">
 
         <RadioButton
             android:id="@+id/p1_true"
@@ -223,7 +221,7 @@
     <!--- PLAYER 2'S OPTIONS -->
     <TextView
         android:id="@+id/p2"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
@@ -232,8 +230,8 @@
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/p3"
-        app:layout_constraintEnd_toStartOf="@id/rg_p2"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_middle"
+        app:layout_constraintStart_toStartOf="@id/guideline_5left"
         app:layout_constraintTop_toBottomOf="@id/p1" />
 
     <RadioGroup
@@ -243,8 +241,8 @@
         android:orientation="horizontal"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/rg_p3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/p2"
+        app:layout_constraintEnd_toEndOf="@id/guideline_5right"
+        app:layout_constraintStart_toEndOf="@+id/guideline_middle"
         app:layout_constraintTop_toBottomOf="@+id/rg_p1">
 
         <RadioButton
@@ -274,7 +272,7 @@
     <!--- PLAYER 3'S OPTIONS -->
     <TextView
         android:id="@+id/p3"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
@@ -283,8 +281,8 @@
         android:textSize="17sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/p4"
-        app:layout_constraintEnd_toStartOf="@id/rg_p3"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_middle"
+        app:layout_constraintStart_toStartOf="@id/guideline_5left"
         app:layout_constraintTop_toBottomOf="@id/p2" />
 
     <RadioGroup
@@ -294,8 +292,8 @@
         android:orientation="horizontal"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@id/rg_p4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/p3"
+        app:layout_constraintEnd_toEndOf="@id/guideline_5right"
+        app:layout_constraintStart_toEndOf="@+id/guideline_middle"
         app:layout_constraintTop_toBottomOf="@+id/rg_p2">
 
         <RadioButton
@@ -325,7 +323,7 @@
     <!--- PLAYER 4'S OPTIONS -->
     <TextView
         android:id="@+id/p4"
-        android:layout_width="160dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center_vertical"
@@ -333,9 +331,10 @@
         android:textColor="@color/black"
         android:textSize="17sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/rg_p4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/p3" />
+        app:layout_constraintEnd_toStartOf="@id/guideline_middle"
+        app:layout_constraintStart_toStartOf="@id/guideline_5left"
+        app:layout_constraintTop_toBottomOf="@id/p3"
+        app:layout_constraintBottom_toTopOf="@id/guideline_70top"/>
 
     <RadioGroup
         android:id="@+id/rg_p4"
@@ -343,9 +342,9 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@id/next_question"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/p4"
+        app:layout_constraintBottom_toTopOf="@id/guideline_70top"
+        app:layout_constraintEnd_toEndOf="@id/guideline_5right"
+        app:layout_constraintStart_toEndOf="@+id/guideline_middle"
         app:layout_constraintTop_toBottomOf="@+id/rg_p3">
 
         <RadioButton
@@ -376,7 +375,6 @@
         android:id="@+id/next_question"
         android:layout_width="185dp"
         android:layout_height="@dimen/button_height"
-        android:layout_marginTop="20dp"
         android:backgroundTint="@color/white"
         android:fontFamily="sans-serif-smallcaps"
         android:text="NEXT QUESTION"
@@ -384,9 +382,10 @@
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
         app:cornerRadius="@dimen/button_corner"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_section"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rg_p4"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_70top"
         app:strokeColor="@color/orange"
         app:strokeWidth="@dimen/button_stroke" />
 
@@ -410,8 +409,6 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="15dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/true_false"
         android:textColor="@color/black"
@@ -426,7 +423,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="80dp" />
+        app:layout_constraintGuide_percent="0.85" />
 
     <TextView
         android:id="@+id/remaining_questions_num"
@@ -471,5 +468,27 @@
         app:layout_constraintEnd_toStartOf="@+id/end_early"
         app:layout_constraintStart_toEndOf="@+id/remaining_questions_num"
         app:layout_constraintTop_toTopOf="@+id/bottom_section" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_70top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_40top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="251dp"
+        app:layout_constraintGuide_percent="0.40" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

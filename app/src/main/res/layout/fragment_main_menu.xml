@@ -8,11 +8,8 @@
 
     <TextView
         android:id="@+id/welcome_tv"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:text="WELCOME TO"
@@ -23,22 +20,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/guideline6" />
 
     <TextView
         android:id="@+id/appName_tv"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:text="SimpleQuiz"
         android:textColor="@color/orange"
         android:textSize="40dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/desc_tv"
+        app:layout_constraintBottom_toTopOf="@id/guideline12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,55 +42,98 @@
         android:id="@+id/desc_tv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="20dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:text="@string/main_desc"
         android:textSize="@dimen/desc_size"
-        app:layout_constraintBottom_toTopOf="@+id/quiz"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline10"
+        app:layout_constraintEnd_toEndOf="@id/guideline5"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appName_tv" />
+        app:layout_constraintStart_toStartOf="@id/guideline4"
+        app:layout_constraintTop_toBottomOf="@id/guideline12" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/quiz"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="15dp"
         android:backgroundTint="@color/orange"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Quiz!"
+        android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
         app:cornerRadius="@dimen/button_corner"
-        android:textSize="@dimen/button_text_size"
         app:layout_constraintBottom_toTopOf="@+id/questions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc_tv" />
+        app:layout_constraintTop_toBottomOf="@id/guideline2" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/questions"
         android:layout_width="@dimen/button_width"
         android:layout_height="@dimen/button_height"
-        android:layout_marginTop="15dp"
         android:backgroundTint="@color/white"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Questions"
         android:textColor="@color/orange"
+        android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
         app:cornerRadius="@dimen/button_corner"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quiz"
         app:strokeColor="@color/orange"
-        app:strokeWidth="@dimen/button_stroke"
-        android:textSize="@dimen/button_text_size" />
+        app:strokeWidth="@dimen/button_stroke" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

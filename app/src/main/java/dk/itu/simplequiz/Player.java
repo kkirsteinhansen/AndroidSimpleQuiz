@@ -118,7 +118,7 @@ public class Player extends ViewModel implements Comparable<Player> {
         for (int i = 1; i < ranked.size(); i++) {
             if (ranked.get(i).getScore() == highestScore) numOfWinners++; }
 
-        String congrats = "Congratulations,\n";
+        String congrats = "Congratulations,\n\n";
 
         switch (numOfWinners) {
             case 1: return congrats + ranked.get(0).getName() + "!";
