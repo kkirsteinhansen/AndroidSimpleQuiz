@@ -157,7 +157,7 @@
     <TextView
         android:id="@+id/current_question"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="0dp"
         android:fontFamily="sans-serif-condensed-light"
         android:gravity="center_horizontal"
         android:textColor="@color/black"

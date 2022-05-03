@@ -3,26 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="20dp">
+    android:layout_height="match_parent">
 
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
         android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
-        android:text="Final\nResults"
+        android:text="Final Results"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="38sp"
         app:layout_constraintBottom_toTopOf="@+id/winner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@id/guideline_list_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_list_left"
+        app:layout_constraintTop_toTopOf="@id/guideline14" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier3"
@@ -45,17 +42,15 @@
     <TextView
         android:id="@+id/winner"
         android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
+        android:layout_height="0dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline_list_top"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_list_right"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_list_left"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.google.android.material.button.MaterialButton
@@ -68,9 +63,9 @@
         android:textSize="@dimen/button_text_size"
         app:cornerRadius="@dimen/button_corner"
         app:layout_constraintBottom_toTopOf="@+id/guideline1"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_list_right"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_list_left"
         app:layout_constraintTop_toTopOf="@+id/guideline_list_bottom"
         app:strokeColor="@color/orange"
         app:strokeWidth="@dimen/button_stroke" />
@@ -330,13 +325,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="25dp" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_list_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="25dp" />
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
