@@ -393,17 +393,20 @@
         android:id="@+id/finish"
         android:layout_width="185dp"
         android:layout_height="@dimen/button_height"
-        android:layout_marginTop="20dp"
         android:backgroundTint="@color/orange"
         android:fontFamily="sans-serif-smallcaps"
         android:text="FINISH QUIZ"
+        android:textColor="@color/white"
         android:textSize="@dimen/button_text_size"
         android:textStyle="bold"
-        android:visibility="gone"
         app:cornerRadius="@dimen/button_corner"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_section"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rg_p4" />
+        app:layout_constraintTop_toBottomOf="@+id/guideline_70top"
+        app:strokeColor="@color/orange"
+        app:strokeWidth="@dimen/button_stroke"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/textView2"
